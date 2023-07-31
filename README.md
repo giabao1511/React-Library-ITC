@@ -9,7 +9,7 @@
 
 # System 🤖: Business Microservice.
 
-# Project Job ✏️: WebSite Online School Libary Book .
+# Project Job ✏️: WebSite Online School Library.
 
 ## 1. Nguyễn Tiến Tài ( Backend Dev 🚩).
 
