@@ -1,0 +1,266 @@
+.book__view {
+  margin-top: $header-height;
+  font-size: 1.6rem;
+  padding: 0 10vw;
+
+  &__name {
+    @include hologram_text;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+
+    // span {
+    //   @include hologram_text;
+    // }
+  }
+
+  &__btns {
+    margin-top: 2rem !important;
+
+    button {
+      padding: 10px 20px;
+      margin-right: 1.2rem;
+      border-radius: 0.5rem;
+      outline: none;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        opacity: 0.875;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    .borrow-btn {
+      background: #0d296b;
+    }
+
+    .like-btn {
+      background: #ec1d25;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    min-width: 160px;
+    max-width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__location {
+    color: $txt-second-color;
+    font-weight: 700;
+
+    &__title {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.8rem;
+      background: #0d296b;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .quantity,
+    .bookshelf {
+      span {
+        font-size: 2rem;
+        color: $txt-main-color;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &__data {
+    color: $txt-second-color;
+    font-weight: 700;
+    margin-left: 3rem;
+
+    & > div {
+      margin-top: 1.2rem;
+    }
+
+    span {
+      text-transform: capitalize;
+    }
+
+    &__author,
+    &__id,
+    &__publisher,
+    &__page,
+    &__language {
+      span {
+        font-size: 2rem;
+        color: $txt-main-color;
+        margin-left: 0.5rem;
+      }
+    }
+
+    &__rate {
+      @include flex(center, flex-start);
+
+      .MuiRating-readOnly {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 5rem;
+    &__title {
+      @include hologram_text;
+      font-weight: 700;
+      font-size: 2.8rem;
+      border-bottom: 2px solid;
+      border-image-slice: 1;
+      border-image-source: $txt-hologram;
+
+      span {
+        @include hologram_text;
+      }
+    }
+
+    &__data {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      color: $txt-second-color;
+    }
+  }
+
+  &__comment {
+    margin-top: 5rem;
+
+    &__title {
+      @include hologram_text;
+      font-weight: 700;
+      font-size: 2.8rem;
+      border-bottom: 2px solid;
+      border-image-slice: 1;
+      border-image-source: $txt-hologram;
+
+      span {
+        @include hologram_text;
+      }
+    }
+
+    &__content {
+      .comment {
+        margin-top: 2rem;
+
+        &__input {
+          label {
+            margin-left: 2rem;
+            img {
+              border-radius: 50%;
+              width: 75%;
+            }
+          }
+
+          &__btn {
+            &:hover,
+            &:focus {
+              box-shadow: inset -8rem 0 0 0 #0d296b, inset 8rem 0 0 0 #0d296b;
+              color: #fff;
+            }
+
+            display: block;
+            margin-left: auto;
+            color: $txt-main-color;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            border: 2px solid #0d296b;
+            font-size: 1.3rem;
+            background: none;
+            line-height: 1;
+            padding: 12px 30px;
+            transition: 0.5s;
+          }
+
+          textarea {
+            padding: 15px;
+            width: 100%;
+            border: 1px solid $txt-main-color;
+            outline-color: $txt-main-color;
+            border-radius: 10px;
+            margin-bottom: 10px;
+          }
+        }
+
+        &__card {
+          margin-top: 1rem;
+
+          &__preview {
+            opacity: 0.5;
+          }
+
+          &__see-more {
+            padding: 10px;
+            background: $txt-main-color;
+            margin: 0 auto;
+            margin-top: 2.5rem;
+            width: 200px;
+            color: #fff;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+          }
+
+          &__item {
+            margin-top: 3rem;
+
+            &__see-more {
+              text-align: center;
+              margin-top: 1rem;
+              cursor: pointer;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            &__content {
+              background: #f4f4f4;
+              padding: 15px 0 15px 20px;
+              border-radius: 10px;
+            }
+
+            &__response {
+              margin-left: 10px;
+              margin-top: 10px;
+              color: $txt-main-color;
+              cursor: pointer;
+            }
+          }
+
+          &__name {
+            margin-right: 20px;
+            font-weight: 700;
+          }
+
+          &__time {
+            font-style: italic;
+            font-size: 1.4rem;
+          }
+
+          &__body {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}

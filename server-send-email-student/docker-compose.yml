@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+    ###! send_email_student ###
+    send_email_student:
+        container_name: send_email_student
+        external_links:
+            - backend-manager-student_libary_school
+        image: send_email_student
+        restart: always
+        build:
+            dockerfile: Dockerfile
+            context: .
+        environment:
+            NODE_ENV: PRODUCTION
+        volumes:
+            - './src:/usr/src/app/src'
+        env_file:
+            - .env
+        command: npm run email:live
+        networks:
+            - sendemail
+
+###! NETWORD GENERAL ###
+networks:
+    sendemail:
+        driver: bridge

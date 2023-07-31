@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $main-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+@each $color, $val in $colors {
+  .color-#{$color} {
+    color: $val;
+  }
+
+  .bg-#{$color} {
+    background-color: $val;
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-md-#{$val} {
+    @include tablet {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-sm-#{$val} {
+    @include mobile {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1620px;
+  padding: 0 100px;
+  margin: auto;
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    padding: 0 10px;
+  }
+}
+
+img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.main {
+  margin-top: $header-height;
+  margin-bottom: 2rem;
+
+  @include tablet {
+    margin-top: calc(#{$header-tablet-height} + 20px);
+  }
+
+  @include mobile {
+    margin-top: calc(#{$header-mobile-height} + 10px);
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.swal-wide {
+  width: 500px !important;
+  height: 270px !important;
+  font-size: 1.2rem !important;
+}
+
+.error-msg {
+  color: #ec1d25;
+  font-size: 1.5rem;
+
+  i {
+    margin-top: 0.3rem;
+  }
+}
+
+.error-input {
+  border-color: #ec1d25;
+  border-width: 1px;
+}
+
+.modal-box {
+  @include hologram-border(2);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400;
+  background: #fff;
+  // boxShadow: 24;
+  padding: 3.5rem 8rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.modal-desc {
+  text-align: center;
+  font-size: 1.8rem;
+  font-style: italic;
+
+  .book-name {
+    font-weight: 700;
+  }
+}
+
+.rating {
+  margin: 0 auto;
+  font-size: 5rem !important;
+
+  svg {
+    margin-top: 4.5px;
+  }
+}
+
+.book__view__btn {
+  text-align: center;
+
+  .rate-btn {
+    text-align: center;
+    font-size: 1.5rem;
+    background: #0d296b;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

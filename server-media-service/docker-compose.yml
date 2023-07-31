@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+    ###! upload-api ###
+    uploadapi:
+        container_name: upload-api
+        external_links:
+            - backend-manager-student_libary_school
+        image: cloundinary
+        restart: always
+        build:
+            dockerfile: Dockerfile
+            context: .
+        environment:
+            NODE_ENV: PRODUCTION
+        volumes:
+            - './src:/usr/src/app/src'
+        env_file:
+            - .env
+        command: npm run media:live
+        networks:
+            - upload-network
+
+###! NETWORD GENERAL ###
+networks:
+    upload-network:
+        driver: bridge

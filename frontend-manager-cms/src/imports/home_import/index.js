@@ -1,0 +1,12 @@
+export { default as SCHOOL_LOGO } from '../../assets/png/logo-school.png';
+export { default as CalenderIcon } from '../../assets/icons/Calendar.png';
+export { default as CharFillIcon } from '../../assets/icons/Chart_fill.png';
+export { default as ChartIcon } from '../../assets/icons/Chart.png';
+export { default as ChatIcon } from '../../assets/icons/Chat.png';
+export { default as FolderIcon } from '../../assets/icons/Folder.png';
+export { default as SettingIcon } from '../../assets/icons/Setting.png';
+export { default as ControlIcon } from '../../assets/icons/control.png';
+export { default as SearchIcon } from '../../assets/icons/Search.png';
+export { default as UserIcon } from '../../assets/icons/User.png';
+export { default as logo } from '../../assets/icons/logo.png';
+export { default as BookIcon } from '../../assets/icons/book_icon-removebg-preview.png';

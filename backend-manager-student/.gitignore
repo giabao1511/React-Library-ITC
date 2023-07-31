@@ -1,0 +1,12 @@
+node_modules
+.env
+redis-master
+redis-slave
+migrations
+docker-entrypoint-initdb.d
+setup
+file
+scrip/log_scrip_redis_date.txt
+scrip/.env
+test/jest/.env
+mongo

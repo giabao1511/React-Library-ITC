@@ -1,0 +1,361 @@
+#!@author Nguyễn Tiến Tài
+#!created_at 08/02/2023
+#!description: General
+# Info Swagger Admin APi
+info:
+    title: Document Admin
+    description: CURD Categories
+    version: 1.0.0
+servers:
+    - url: http://localhost:5000
+      description: Local development server admin api
+# General
+components:
+    # Parameter
+    parameters:
+        X-DEVICE-ID:
+            in: header
+            name: X-DEVICE-ID
+            required: true
+            schema:
+                type: string
+        X-OS-TYPE:
+            in: header
+            name: X-OS-TYPE
+            required: true
+            schema:
+                type: string
+        X-OS-VERSION:
+            in: header
+            name: X-OS-VERSION
+            required: true
+            schema:
+                type: string
+        X-APP-VERSION:
+            in: header
+            name: X-APP-VERSION
+            required: true
+            schema:
+                type: string
+        X-DEVICE-NAME:
+            in: header
+            name: X-DEVICE-NAME
+            required: true
+            schema:
+                type: string
+        TOKEN:
+            in: header
+            name: Authorization
+            type: string
+            description: Bearer Token
+            required: true
+            schema:
+                type: bearerToken
+    # Unauthorized
+    responses:
+        UnauthorizedError:
+            description: Access token is missing or invalid, or the user does not have access to perform the action,or or Device Invalid
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: integer
+                                example: 400
+                            message:
+                                type: string
+                                example: 'Unauthorized'
+        # Fail CURD Fail
+        ServerCURDFail:
+            description: CURD Fail !!!
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: integer
+                                example: 500
+                            message:
+                                type: string
+                                example: Service Unavailable
+                            element:
+                                type: object
+                                example: Internal Server Error
+        ServerFail:
+            description: Service die
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            status:
+                                type: integer
+                                example: 503
+                            message:
+                                type: string
+                                example: Service Unavailable
+                            element:
+                                type: object
+                                example: Out Of Service
+    #!@author Nguyễn Tiến Tài
+    #!created_at 03/02/2023
+    #!description: create categories
+paths:
+    /v1/admin/private/categories/create:
+        post:
+            summary: Create categories
+            tags: [Create categories]
+            operationId: createCategories
+            parameters:
+                - $ref: '#/components/parameters/COOKIE-CLIENT'
+                - $ref: '#/components/parameters/X-DEVICE-ID'
+                - $ref: '#/components/parameters/X-OS-TYPE'
+                - $ref: '#/components/parameters/X-OS-VERSION'
+                - $ref: '#/components/parameters/X-APP-VERSION'
+                - $ref: '#/components/parameters/X-DEVICE-NAME'
+                - $ref: '#/components/parameters/TOKEN'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                input:
+                                    type: object
+                                    properties:
+                                        categories_input:
+                                            type: object
+                                            properties:
+                                                name:
+                                                    type: string
+                                                    example: Tai
+                        required:
+                            - name
+            responses:
+                200:
+                    description: Create success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    message:
+                                        type: string
+                                        example: Success
+                400:
+                    description: Invalid input
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 400
+                                    message:
+                                        type: string
+                                        example: Bad Request
+                503:
+                    $ref: '#/components/responses/ServerFail'
+
+    #!@author Nguyễn Tiến Tài
+    #!created_at 03/02/2023
+    #!description: update categories
+    /v1/admin/private/categories/update:
+        post:
+            summary: Update Categories
+            tags: [Update Categories]
+            operationId: updateCategories
+            parameters:
+                - $ref: '#/components/parameters/COOKIE-CLIENT'
+                - $ref: '#/components/parameters/X-DEVICE-ID'
+                - $ref: '#/components/parameters/X-OS-TYPE'
+                - $ref: '#/components/parameters/X-OS-VERSION'
+                - $ref: '#/components/parameters/X-APP-VERSION'
+                - $ref: '#/components/parameters/X-DEVICE-NAME'
+                - $ref: '#/components/parameters/TOKEN'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                input:
+                                    type: object
+                                    properties:
+                                        categories_input:
+                                            type: object
+                                            properties:
+                                                category_id:
+                                                    type: string
+                                                    example: 1475825111725506562
+                                                name:
+                                                    type: string
+                                                    example: Tai
+                        required:
+                            - categories_id
+                            - name
+            responses:
+                200:
+                    description: update success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    message:
+                                        type: string
+                                        example: Success
+                400:
+                    description: Invalid input
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 400
+                                    message:
+                                        type: string
+                                        example: Bad Request
+                503:
+                    $ref: '#/components/responses/ServerFail'
+
+    #!@author Nguyễn Tiến Tài
+    #!created_at 03/02/2023
+    #!description: delete categories
+    /v1/admin/private/categories/delete:
+        post:
+            summary: Delete Categories
+            tags: [Delete Categories]
+            operationId: deleteCategories
+            parameters:
+                - $ref: '#/components/parameters/COOKIE-CLIENT'
+                - $ref: '#/components/parameters/X-DEVICE-ID'
+                - $ref: '#/components/parameters/X-OS-TYPE'
+                - $ref: '#/components/parameters/X-OS-VERSION'
+                - $ref: '#/components/parameters/X-APP-VERSION'
+                - $ref: '#/components/parameters/X-DEVICE-NAME'
+                - $ref: '#/components/parameters/TOKEN'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                input:
+                                    type: object
+                                    properties:
+                                        categories_input:
+                                            type: object
+                                            properties:
+                                                category_id:
+                                                    type: string
+                                                    example: 1474830717476143106
+                        required:
+                            - category_id
+            responses:
+                200:
+                    description: Delete success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    message:
+                                        type: string
+                                        example: Success
+                400:
+                    description: Invalid input
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 400
+                                    message:
+                                        type: string
+                                        example: Bad Request
+                503:
+                    $ref: '#/components/responses/ServerFail'
+    #!@author Nguyễn Tiến Tài
+    #!created_at 03/02/2023
+    #!description: Detail categories
+    /v1/admin/private/categories/detail/:category_id:
+        get:
+            summary: Detail categories
+            tags: [Detail categories]
+            operationId: detailCategories
+            parameters:
+                - $ref: '#/components/parameters/COOKIE-CLIENT'
+                - $ref: '#/components/parameters/X-DEVICE-ID'
+                - $ref: '#/components/parameters/X-OS-TYPE'
+                - $ref: '#/components/parameters/X-OS-VERSION'
+                - $ref: '#/components/parameters/X-APP-VERSION'
+                - $ref: '#/components/parameters/X-DEVICE-NAME'
+                - $ref: '#/components/parameters/TOKEN'
+            responses:
+                200:
+                    description: Detail success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    message:
+                                        type: string
+                                        example: Success
+                503:
+                    $ref: '#/components/responses/ServerFail'
+    #!@author Nguyễn Tiến Tài
+    #!created_at 03/02/2023
+    #!description: Get all categories
+    /v1/admin/private/categories/all:
+        get:
+            summary: Get all categories
+            tags: [Get all categories]
+            operationId: getAllCategories
+            parameters:
+                - $ref: '#/components/parameters/COOKIE-CLIENT'
+                - $ref: '#/components/parameters/X-DEVICE-ID'
+                - $ref: '#/components/parameters/X-OS-TYPE'
+                - $ref: '#/components/parameters/X-OS-VERSION'
+                - $ref: '#/components/parameters/X-APP-VERSION'
+                - $ref: '#/components/parameters/X-DEVICE-NAME'
+                - $ref: '#/components/parameters/TOKEN'
+            responses:
+                200:
+                    description: success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    status:
+                                        type: integer
+                                        example: 200
+                                    message:
+                                        type: string
+                                        example: Success
+                503:
+                    $ref: '#/components/responses/ServerFail'
