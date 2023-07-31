@@ -11,28 +11,10 @@
 
 # Project Job ✏️: WebSite Online School Libary Book .
 
-## Team Word: Liên hệ công việc https://profile-forme.cf
-
-## 1. Nguyễn Tiến Tài ( Technical Leader 🚩).
+## 1. Nguyễn Tiến Tài ( Backend Dev 🚩).
 
 ## 2. Gia Bảo ( Developer and QA Quality Assurance,FE ❤️‍🔥).
 
-## 3. Nguyễn Duy Thinh ( Developer-BE ❤️‍🔥 ).
-
-## System Business  
+## System Business
 
 <img src="https://res.cloudinary.com/taithinhnam/image/upload/v1681640705/hinh1_ymse31.png" width="100%">
-
-## Tài Khoản Donate li Cf để có động lực code cho anh em tham khảo 😄😄.
-
-![giphy](https://3.bp.blogspot.com/-SzGvXn2sTmw/V6k-90GH3ZI/AAAAAAAAIsk/Q678Pil-0kITLPa3fD--JkNdnJVKi_BygCLcB/s1600/cf10-fbc08%2B%25281%2529.gif)
-
-## Mk: NGUYEN TIEN TAI
-
-## STK: 1651002972052
-
-## Chi Nhánh: NGAN HANG TMCP AN BINH (ABBANK).
-
-## SUPORT CONTACT: [https://profile-forme.cf](https://profile-forme.cf)
-
-## Thank You <3.
