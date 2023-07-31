@@ -1,5 +1,3 @@
-<p align="center"><a href="https://profile-forme.cf/" target="_blank"><img src="https://res.cloudinary.com/ecommerce2021/image/upload/v1659065987/avatar/logo_begsn1.png" width="300"></a></p>
-
 <p align="center">
 <a href="https://www.linkedin.com/in/gia-bao-a2761a244/"><img src="https://img.icons8.com/color/48/000000/linkedin-circled--v1.png" alt="Linkedin"></a>
 <a href="https://giabaoprofile.vercel.app"><img src="https://img.icons8.com/color/48/000000/internet--v1.png" alt="Profile"></a>
